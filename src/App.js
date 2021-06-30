@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import './App.css';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import Message from './components/Message';
@@ -31,6 +32,7 @@ function App() {
 
   return (
     <FilterContext.Provider value={{ filter, setFilter }}>
+      
       <LoadingContext.Provider value={{ addRequest, removeRequest, isLoading }}>
         <MessageContext.Provider value={{ message, setMessage }}>
           <CategoriesContext.Provider value={{ categories }}>
