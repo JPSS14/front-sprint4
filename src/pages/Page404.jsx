@@ -1,8 +1,11 @@
 import React from 'react';
+import { Main, NotFound } from '../UI/MainStyled';
 
-export default function Page404(){
+export default function Page404() {
 
-    return(
-        <h1>404</h1>
+    return (
+        <Main>
+            <NotFound>404 Página não encontrada</NotFound>
+        </Main>
     );
 }

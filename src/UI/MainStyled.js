@@ -74,3 +74,9 @@ export const LinkButton = styled.button`
     padding: 7px 0;
     border-radius: 5px;
 `;
+
+export const NotFound = styled.h1`
+    margin: 100px auto;
+    color: red;
+    font-weight: bold;
+`;

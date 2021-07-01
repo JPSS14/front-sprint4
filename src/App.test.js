@@ -2,6 +2,7 @@ import { render, screen } from '@testing-library/react';
 import App from './App';
 import Page404 from '../src/pages/Page404';
 import ProductsDetails from '../src/pages/products/ProductsDetails';
+import Breadcrumbs from './pages/products/components/Breadcrumbs';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 
@@ -16,7 +17,7 @@ describe("Testando header", () => {
   it('Deverá fazer o filtro', () => {
     render(<Page404 />);
 
-    expect(screen.getByText('404')).toBeInTheDocument();
+    expect(screen.getByText('404 Página não encontrada')).toBeInTheDocument();
   })
 
   it('Deverá fazer o filtro', () => {
@@ -24,6 +25,5 @@ describe("Testando header", () => {
 
     expect(screen.getByText('Selecionar tamanho:')).toBeInTheDocument();
   })
-
   
 });
