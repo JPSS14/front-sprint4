@@ -1,18 +1,19 @@
 import { useContext } from "react";
 import CategoriesContext from "../../../contexts/CategoriesContext";
+import {MainBread, BreadList, BreadItem, BreadSeparator} from '../../../UI/MainStyled';
 
 function BreadcrumbItem({ link, name }) {
     return (
-        <li className="breadcrumbs__item">
+        <BreadItem>
             { link ?
                 <>
-                    <a className="breadcrumbs__link" href={link}>{name}</a>
-                    <span className="breadcrumbs__item  breadcrumbs__separator">/</span>
+                    <a href={link}>{name}</a>
+                    <BreadSeparator>/</BreadSeparator>
                 </>
                 :
                 <span className="breadcrumbs__link">{name}</span>
             }
-        </li>
+        </BreadItem>
     );
 }
 
@@ -20,13 +21,13 @@ function Breadcrumbs() {
     const { categories } = useContext(CategoriesContext);
 
     return (
-        <section className="main__breadcrumbs breadcrumbs">
+        <MainBread>
             <nav>
-                <ol className="breadcrumbs__list">
+                <BreadList>
                     {categories.current && categories.current.map(c => <BreadcrumbItem key={c.id} link={c.link} name={c.name} />)}
-                </ol>
+                </BreadList>
             </nav>
-        </section>
+        </MainBread>
     )
 }
 

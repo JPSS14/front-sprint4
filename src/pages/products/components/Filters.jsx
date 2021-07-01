@@ -1,19 +1,21 @@
+import {MainFilter, FilterList, FilterItems, FilterLabel, FilterImg} from '../../../UI/MainStyled';
+
 function FilterItem({ label }) {
     return (
-        <li className="filters__item">
-            <span className="filters__label">{label}</span>
-            <img className="filters__img" src="assets/filter.svg" alt="filtro" />
-        </li>
+        <FilterItems>
+            <FilterLabel>{label}</FilterLabel>
+            <FilterImg src="assets/filter.svg" alt="filtro" />
+        </FilterItems>
     );
 }
 
 function Filters({ filters }) {
     return (
-        <section className="main__filters filters">
-            <ul className="filters__list">
+        <MainFilter>
+            <FilterList>
                 {filters.map(f => <FilterItem key={f.id} label={f.label} />)}
-            </ul>
-        </section>
+            </FilterList>
+        </MainFilter>
     );
 }
 

@@ -80,3 +80,121 @@ export const NotFound = styled.h1`
     color: red;
     font-weight: bold;
 `;
+
+export const MainBread = styled.section`
+    margin-bottom: 16px;
+`;
+
+export const BreadList = styled.ol`
+    display: flex;
+
+    @media (max-width: 1200px) {
+
+          justify-content: center;
+      }
+`;
+
+export const BreadItem = styled.ol`
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: #585858;
+    
+    :not(:last-child):hover {
+        text-decoration: underline;
+    }
+`;
+
+export const BreadSeparator = styled.span`
+    margin-left: 8px;
+    margin-right: 8px;
+    user-select: none;
+`;
+
+export const MainFilter = styled.section`
+    border-top: 1px solid #e3e3e3;
+    border-bottom: 1px solid #e3e3e3;
+
+    @media (max-width: 1200px) {
+
+          display: none;
+        
+      }
+`;
+
+export const FilterList = styled.ul`
+    display: flex;
+`;
+
+export const FilterItems = styled.li`
+    display: flex;
+    align-items: center;
+    padding: 12px 14px;
+
+    :hover {
+        cursor: pointer;
+        background-color: rgba(38, 30, 30, 0.04);
+      }
+`;
+
+export const FilterLabel = styled.span`
+    text-transform: uppercase;
+    font-size: 0.6875rem;
+    font-weight: 400;
+    color: #261e1e;
+`;
+
+export const FilterImg = styled.img`
+    height: 20px;
+    margin-left: 8px;
+`;
+
+export const MainProducts = styled.section`
+    margin-top: 20px;
+    margin-bottom: 20px;
+`;
+
+export const ProductsRow = styled.div`
+    margin: 8px;
+`;
+
+export const ProductsList = styled.ol`
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+`;
+
+export const ProductsCard = styled.li`
+    flex-basis: 23%;
+`;
+
+export const Card = styled.div`
+    cursor: pointer;
+    border: 1px solid white;
+    padding: 8px;
+
+    :hover {
+        box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+    }
+`;
+
+export const CardImg = styled.img`
+    max-width: 100%;
+    max-height: 100%;
+`;
+
+export const CardDescription = styled.p`
+    font-size: 0.6875rem;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.87);
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 8px;
+    margin-bottom: 10px;
+`;
+
+export const CardPrice = styled.p`
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+`;

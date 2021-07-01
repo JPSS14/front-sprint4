@@ -1,4 +1,5 @@
 import { useContext, useEffect, useState } from "react";
+import { Main, MainProducts, ProductsRow, ProductsList, ProductsCard, Card, CardImg, CardDescription, CardPrice } from "../../UI/MainStyled";
 import { Link } from "react-router-dom";
 import FilterContext from "../../contexts/FilterContext";
 import LoadingContext from "../../contexts/LoadingContext";
@@ -10,21 +11,21 @@ import Filters from "./components/Filters";
 function Product({ image, name, price, id }) {
     return (
         
-        <li className="products__card card">
+        <ProductsCard>
             
-            <div className="card">
+            <Card>
             <Link to={`/detalhes/${id}`}>
-                <img className="card__img" src={image} alt="" />
-                <p className="card__description">
+                <CardImg src={image} alt="" />
+                <CardDescription>
                     {name}
-                </p>
-                <p className="card__price">
+                </CardDescription>
+                <CardPrice>
                     R$ {price}
-                </p>
+                </CardPrice>
                 </Link>
-            </div>
+            </Card>
             
-        </li>
+        </ProductsCard>
     );
 }
 
@@ -51,12 +52,12 @@ function ProductsPage() {
     }
 
     return (
-        <main className="main">
+        <Main>
             <Breadcrumbs></Breadcrumbs>
             <Filters filters={filters}></Filters>
-            <section className="main__products products">
-                <div className="products__row">
-                    <ol className="products__list">
+            <MainProducts>
+                <ProductsRow>
+                    <ProductsList>
                         {products
                             .filter(p =>
                                 filter ? p.name.toUpperCase().indexOf(filter.toUpperCase()) !== -1 : true)
@@ -65,14 +66,14 @@ function ProductsPage() {
                                     <Product key={p.sku} image={p.image} name={p.name} price={p.price} id={p.sku}/>
                             )
                         }
-                    </ol>
-                </div>
+                    </ProductsList>
+                </ProductsRow>
                 <div className="products__row">
                     <ol className="products__list">
                     </ol>
                 </div>
-            </section>
-        </main>
+            </MainProducts>
+        </Main>
     );
 }
 

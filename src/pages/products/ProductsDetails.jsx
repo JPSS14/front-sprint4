@@ -20,6 +20,16 @@ export default function ProductsDetails() {
     // eslint-disable-next-line
     useEffect(() => loadProducts(), [id]);
 
+    function loadProducts() {
+        addRequest();
+        ProductsService.get()
+            .then(p => {
+                setProduct(p.products);
+            })
+            .catch(() => setMessage("Ocorreu um erro ao carregar os produtos..."))
+            .finally(() => removeRequest());
+    }
+
     useEffect(() => {
         // eslint-disable-next-line
         if (product.length > 0) {
@@ -38,20 +48,11 @@ export default function ProductsDetails() {
                 }
             }
         }
-        //     // eslint-disable-next-line
+    // eslint-disable-next-line
     }, [product]);
 
     useEffect(() => setActiveSize(size[0]), [size]);
 
-    function loadProducts() {
-        addRequest();
-        ProductsService.get()
-            .then(p => {
-                setProduct(p.products);
-            })
-            .catch(() => setMessage("Ocorreu um erro ao carregar os produtos..."))
-            .finally(() => removeRequest());
-    }
     return (
 
         <Main>
@@ -68,9 +69,12 @@ export default function ProductsDetails() {
 
                                 <div>
                                     {size.map((item, key) => (
-                                        activeSize === item ? (<OptionSize onClick={(e) => setActiveSize(item)} teste key={key}>{item}</OptionSize>) :
-                                            (<OptionSize onClick={(e) => setActiveSize(item)} key={key}>{item}</OptionSize>)
-
+                                        activeSize === item ? (
+                                            <OptionSize onClick={(e) => setActiveSize(item)} teste key={key}>{item}</OptionSize>
+                                        ) :
+                                            (
+                                                <OptionSize onClick={(e) => setActiveSize(item)} key={key}>{item}</OptionSize>
+                                            )
                                     ))}
                                 </div>
 
