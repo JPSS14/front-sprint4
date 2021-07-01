@@ -2,9 +2,9 @@ import { useContext } from "react";
 import CategoriesContext from "../contexts/CategoriesContext";
 import {HeaderMenu, MenuList, MenuLink} from "../UI/HeaderStyled";
 
-function MenuItem({ label }) {
+export function MenuItem({ label }) {
     return (
-        <li className="menu__item">
+        <li>
             <MenuLink href="#home">
                 <span>{label}</span>
             </MenuLink>

@@ -2,7 +2,7 @@ import { useContext } from "react";
 import CategoriesContext from "../../../contexts/CategoriesContext";
 import {MainBread, BreadList, BreadItem, BreadSeparator} from '../../../UI/MainStyled';
 
-function BreadcrumbItem({ link, name }) {
+export function BreadcrumbItem({ link, name }) {
     return (
         <BreadItem>
             { link ?

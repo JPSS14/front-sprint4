@@ -1,6 +1,6 @@
 import {MainFilter, FilterList, FilterItems, FilterLabel, FilterImg} from '../../../UI/MainStyled';
 
-function FilterItem({ label }) {
+export function FilterItem({ label }) {
     return (
         <FilterItems>
             <FilterLabel>{label}</FilterLabel>

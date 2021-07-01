@@ -33,6 +33,7 @@ export default function ProductsDetails() {
     useEffect(() => {
         // eslint-disable-next-line
         if (product.length > 0) {
+            // eslint-disable-next-line
             const active = product.filter(item => item.sku == id);
             if (active.length < 1) {
                 history.push('/404');

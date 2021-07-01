@@ -8,7 +8,7 @@ import ProductsService from "../../services/ProductsService";
 import Breadcrumbs from "./components/Breadcrumbs";
 import Filters from "./components/Filters";
 
-function Product({ image, name, price, id }) {
+export function Product({ image, name, price, id }) {
     return (
         
         <ProductsCard>
