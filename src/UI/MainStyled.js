@@ -165,6 +165,14 @@ export const ProductsList = styled.ol`
 
 export const ProductsCard = styled.li`
     flex-basis: 23%;
+
+    @media (max-width: 1200px) {
+        flex-basis: 30%;
+    }
+
+    @media (max-width: 720px) {
+        flex-basis: 47%;
+    }
 `;
 
 export const Card = styled.div`
